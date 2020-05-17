@@ -1,0 +1,7 @@
+（1）new SpringApplication构造一个Spring应用，初始化阶段：配置resource、
+配置环境、创建初始化构造器，创建应用监听器、配置应用主方法所在类
+（2）应用具体启动方案：启动监听器模块SpringApplicationRunListener
+（观察者模式）、加载配置环境模块（创建配置环境web/noweb，加载属性文件资源、配置监听）、
+SpringBanner配置、配置上下文模块ConfigurableApplicationContext(创建上下文对象
+web\noweb、基本属性配置）、更新应用上下文
+（3）自动化配置模块

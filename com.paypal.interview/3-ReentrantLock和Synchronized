@@ -1,0 +1,4 @@
+reentrantlock支持多个condition条件，synchronized只有一个条件判断。
+synchronized是unfair不公平，reentrantlock既可以公平也可以非公平。
+reentrantlock可以检查是否持有锁，需要finally来释放，synchronized是JVM控制。
+synchronized method这种方式没有reentrantLock更细粒度控制同步。

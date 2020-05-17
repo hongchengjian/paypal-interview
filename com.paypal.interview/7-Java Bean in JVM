@@ -1,0 +1,25 @@
+A.分阶段管理
+（1）创建Creation
+
+（2）应用 Using
+系统维护对象分为四种引用：强引用Strong Reference、软引用Soft Reference(JVM内存不够时算法检查才回收)、
+弱引用Weak Reference、虚引用Phantom Reference（指执行了finalize函数，并且为不可达对象，但还是没被GC回收的对象）
+
+（3）不可视 Invisible
+对象在经历应用阶段后，处于不可视阶段，在其他区域代码中已经不可以再引用对象了。
+
+（4）不可达 Unreachable
+通常是已装载类的静态变量或JNI引用，也是垃圾回收的预备对象。
+
+（5) 可搜集 Collected
+垃圾回收器发现对象不可达，finalize()已被执行，对象空间已被重用了
+
+ (6) 终结 Finalized
+对象被回收，生命周期加载——验证——准备——解析——初始化——使用——卸载流程结束。
+
+B.分区域管理
+程序计数器：指向当前线程正在执行的字节码代码行号
+虚拟机栈：线程私有，存八大基本数据类型、对象引用为主
+本地方法栈：存native方法returnAddress
+堆：分代为主：Eden、From Survivor、To Survivor、Tenured Space、MetaData
+元数据区：取代以前的永久代，存静态变量、常量、类信息
